@@ -19,7 +19,7 @@
 To start the training process, execute the following command:
 
    ```bash
-python main.py
+   python main.py
 
 
 
