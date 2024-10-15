@@ -14,4 +14,12 @@
    pip install numpy tensorflow torch scikit-learn pandas transformers keras tqdm
 
 
+### How to Run
+1. **Train the Model**:
+To start the training process, execute the following command:
+
+   ```bash
+python main.py
+
+
 
