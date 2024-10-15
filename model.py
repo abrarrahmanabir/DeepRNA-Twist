@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import Convolution1D, Dense, Dropout, BatchNormalization, TimeDistributed, Concatenate, Input, UpSampling1D, AveragePooling1D
 from tensorflow.keras.models import Model
 from tensorflow.keras.regularizers import l2
-from utils import attention_module, inceptionBlock
+from utils import attention_module, inceptionBlock, TransformerEncoder, deep3iBLock_with_attention
 
 def get_model(num_features, MAXIMUM_LENGTH):
     _drop_rate_ = 0.4
@@ -12,11 +12,15 @@ def get_model(num_features, MAXIMUM_LENGTH):
     attention_mask = Input(shape=(MAXIMUM_LENGTH,), name='attention_mask')
     pos_ids = Input(batch_shape=(None, MAXIMUM_LENGTH), name='position_input', dtype='int32')
 
-    block1 = inceptionBlock(main_input)
-    block2 = inceptionBlock(block1)
-    output_attention = attention_module(block2, attention_mask, pos_ids)
+    transformer_encoder_1 = TransformerEncoder(intermediate_dim=256, num_heads=4, dropout=_drop_rate_)
+    transformer_output_1 = transformer_encoder_1(main_input)
 
-    conv11 = Convolution1D(filters=d_model, kernel_size=11, activation='relu', padding='same', kernel_regularizer=l2(0.001))(output_attention)
+    block1 = deep3iBLock_with_attention(transformer_output_1, attention_mask, pos_ids)
+    block2 = deep3iBLock_with_attention(block1, attention_mask, pos_ids)
+
+    output_2a3i_attention = attention_module(block2, attention_mask, pos_ids)
+
+    conv11 = Convolution1D(filters=d_model, kernel_size=11, activation='relu', padding='same', kernel_regularizer=l2(0.001))(output_2a3i_attention)
     conv11_attention = attention_module(conv11, attention_mask, pos_ids)
     dense1 = TimeDistributed(Dense(units=256, activation='relu'))(conv11_attention)
     dense1 = Dropout(_drop_rate_)(dense1)
