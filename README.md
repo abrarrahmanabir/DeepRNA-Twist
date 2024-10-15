@@ -1,5 +1,5 @@
 ## DeepRNA-Twist: RNA Torsion Angle Prediction
-We introduce DeepRNA-Twist, a novel deep learning framework designed to predict RNA torsion and pseudo-torsion angles directly from sequence. DeepRNA-Twist utilizes RNA language model embeddings, which provides rich, context-aware feature representations of RNA sequences. Additionally, it introduces 2A3IDC module, combining inception networks with dilated convolutions and multi-head attention mechanism. The dilated convolutions capture long-range dependencies in the sequence without requiring a large number of parameters, while the multi-head attention mechanism enhances the model’s ability to focus on both local and global structural features simultaneously. DeepRNA-Twist was rigorously evaluated on benchmark datasets, including RNA-Puzzles, CASP-RNA, and SPOT-RNA-1D, and demonstrated significant improvements over existing methods, achieving state-of-the-art accuracy.
+We introduce DeepRNA-Twist, a novel deep learning framework designed to predict RNA torsion and pseudo-torsion angles directly from sequence. DeepRNA-Twist utilizes RNA language model embeddings, which provides rich, context-aware feature representations of RNA sequences. Additionally, it introduces 2A3IDC module, combining inception networks with dilated convolutions and multi-head attention mechanism. The dilated convolutions capture long-range dependencies in the sequence without requiring a large number of parameters, while the multi-head attention mechanism enhances the model’s ability to focus on both local and global structural features simultaneously.
 ### Installation
 
 1. **Clone the repository**:
@@ -20,6 +20,8 @@ To start the training process, execute the following command:
 
    ```bash
    python main.py
+
+
 
 
 
