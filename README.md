@@ -22,6 +22,11 @@ To start the training process, execute the following command:
    python main.py
 
 
+### Model Architecture
+![Model Architecture](model.jpg)
+
+
+
 
 
 
