@@ -8,13 +8,6 @@ features = np.load('path_to_features.npy')  # Load the features
 sine_cosine_values = np.load('path_to_sine_cosine_values.npy')  # Load the sine and cosine values
 
 
-
-
-
-# Normalize features if required
-scaler = StandardScaler()
-features = scaler.fit_transform(features.reshape(-1, features.shape[2])).reshape(features.shape)
-
 def train_and_evaluate():
     model, history = train_model(
         features=features,
