@@ -14,7 +14,7 @@ We introduce DeepRNA-Twist, a novel deep learning framework designed to predict 
    pip install numpy tensorflow torch scikit-learn pandas transformers keras tqdm
 
 
-### How to Run
+### How to Train
 1. **Train the Model**:
 To start the training process, execute the following command:
 
