@@ -21,6 +21,31 @@ To start the training process, execute the following command:
    ```bash
    python main.py
 
+## How to Run Inference
+
+### Requirements:
+- Pre-trained model: `trained_DeepRNAtwist.h5`
+- Input dataset: `Data/combined_full.csv`
+- Language model embeddings must be loaded as part of the inference process.
+
+### Steps to Run Inference:
+
+1. **Prepare the Input Data**:
+   Ensure that the input file `Data/combined_full.csv` is available in the repository's `Data/` folder. This CSV file contains the RNA sequence and angles for which you want to predict torsion angles.
+
+2. **Load the Pre-trained Model**:
+   The pre-trained model `trained_DeepRNAtwist.h5` is included in the repository. The inference script will load this model automatically to perform predictions.
+
+3. **Load Language Model Embeddings**:
+   For the inference process, the necessary language model embeddings have to be loaded for prediction.
+
+4. **Run the Inference**:
+   To perform inference on the provided dataset, run the following command:
+   
+   ```bash
+   python inference.py --input Data/combined_full.csv --output results/predictions.csv --model trained_DeepRNAtwist.h5
+
+
 
 ### Model Architecture
 ![Model Architecture](model.jpg)
