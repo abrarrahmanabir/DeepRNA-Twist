@@ -17,7 +17,7 @@ from tensorflow.keras.models import load_model
 
 
 
-pickle_file_path = '/content/drive/My Drive/a31vD.pkl' # LOAD LANGUAGE MODEL ENBEDDINGS
+pickle_file_path = 'emb.pkl' # LOAD LANGUAGE MODEL ENBEDDINGS
 df = pd.read_csv('combined_full.csv')   # LOAD DATASET
 
 with open(pickle_file_path, 'rb') as f:
