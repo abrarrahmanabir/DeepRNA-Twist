@@ -24,7 +24,7 @@ To start the training process, execute the following command:
 ## How to Run Inference
 
 ### Requirements:
-- Pre-trained model: `trained_DeepRNAtwist.h5`
+- Pre-trained model: `Model/trained_DeepRNAtwist.h5`
 - Input dataset: `Data/combined_full.csv`
 - Language model embeddings must be loaded as part of the inference process.
 
@@ -34,7 +34,7 @@ To start the training process, execute the following command:
    Ensure that the input file `Data/combined_full.csv` is available in the repository's `Data/` folder. This CSV file contains the RNA sequence and angles for which you want to predict torsion angles.
 
 2. **Load the Pre-trained Model**:
-   The pre-trained model `trained_DeepRNAtwist.h5` is included in the repository. The inference script will load this model automatically to perform predictions.
+   The pre-trained model `Model/trained_DeepRNAtwist.h5` is included in the repository. The inference script will load this model automatically to perform predictions.
 
 3. **Load Language Model Embeddings**:
    For the inference process, the necessary language model embeddings have to be loaded for prediction.
