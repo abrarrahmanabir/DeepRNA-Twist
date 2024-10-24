@@ -43,7 +43,7 @@ To start the training process, execute the following command:
    To perform inference on the provided dataset, run the following command:
    
    ```bash
-   python inference.py --input Data/combined_full.csv --output results/predictions.csv --model trained_DeepRNAtwist.h5
+   python inference.py 
 
 
 
