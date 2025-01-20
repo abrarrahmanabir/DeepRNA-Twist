@@ -28,7 +28,7 @@ for i in range(len(sequence_embeds)):
     sequence_embeds[i] = np.squeeze(sequence_embeds[i], axis=0)
 
 
-MAXIMUM_LENGTH = 150
+MAXIMUM_LENGTH = 150 # for experiment purpose
 NUM_OF_RNAs = 405  
 valid_bases = ['A', 'U', 'G', 'C']
 df = df[df['Base'].isin(valid_bases)]
