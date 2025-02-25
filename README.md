@@ -41,6 +41,7 @@ def getEmbeddings(text):
         output = model_llm(**input)
     emb = output.last_hidden_state.squeeze(0).cpu().numpy()
     return emb[1:-1, :]
+```
 
 
 ## How to Run Inference
