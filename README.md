@@ -21,6 +21,27 @@ To start the training process, execute the following command:
    ```bash
    python main.py
 
+## RiNALMo Embedding Generation
+'''
+from multimolecule import RnaTokenizer, RiNALMoModel
+import torch
+
+DEVICE = 'cuda'
+
+tokenizer = RnaTokenizer.from_pretrained('multimolecule/rinalmo')
+model_llm = RiNALMoModel.from_pretrained('multimolecule/rinalmo')
+model_llm.to(DEVICE)
+def getEmbeddings(text):
+    input = tokenizer(text, return_tensors='pt', padding=True)
+    input = input.to(DEVICE)
+
+    with torch.no_grad():
+        output = model_llm(**input)
+    emb = output.last_hidden_state.squeeze(0).cpu().numpy()
+    return emb[1:-1, :]
+'''
+
+
 ## How to Run Inference
 
 ### Requirements:
